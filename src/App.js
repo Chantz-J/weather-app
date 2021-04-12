@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react'
+import { connect } from 'react-redux'
+import { ThemeProvider } from 'styled-components'
+import { fetchWeather } from './actions/index'
 
-function App() {
+import { GlobalStyle } from './styles/global'
+import { theme } from './styles/theme'
+
+import SearchBar from './components/Search'
+import WeatherContainer from './components/WeatherContainer'
+
+const App = ({fetchWeather}) => {
+  useEffect(() => {fetchWeather()},[fetchWeather])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <GlobalStyle />
+        <SearchBar />
+        <WeatherContainer />
+      </div>
+    </ThemeProvider>
+  )
 }
+const maptoStateProps = state => {
+  return {
+    error: state.error,
+    weather: state.weather,
+    isLoading: state.isLoading
+  }
+}
+export default connect(maptoStateProps, {fetchWeather})(App)
 
-export default App;
