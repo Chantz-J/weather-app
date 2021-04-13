@@ -9,14 +9,14 @@ import { theme } from './styles/theme'
 import SearchBar from './components/Search'
 import WeatherContainer from './components/WeatherContainer'
 
-const App = ({fetchWeather}) => {
+const App = ({fetchWeather, isLoading}) => {
   useEffect(() => {fetchWeather()},[fetchWeather])
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
         <GlobalStyle />
         <SearchBar />
-        <WeatherContainer />
+        <WeatherContainer isLoading={isLoading}/>
       </div>
     </ThemeProvider>
   )

@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom'
 import App from './App';
 import reportWebVitals from './reportWebVitals'
 
@@ -13,9 +14,11 @@ import thunk from 'redux-thunk'
 const store = createStore(reducer, applyMiddleware(thunk, logger))
 
 ReactDOM.render(
+  <BrowserRouter>
     <Provider store={store}>
       <App />
-    </Provider>,
+    </Provider>
+  </BrowserRouter>,
   document.getElementById('root')
 )
 

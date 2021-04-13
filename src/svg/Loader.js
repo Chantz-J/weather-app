@@ -37,7 +37,7 @@ const SvgContainer = styled.div`
 export default function Loader(){
     return (
         <SvgContainer>
-        <svg viewBox="-25 -25 100 100" preserveAspectRatio>
+        <svg viewBox="-25 -25 100 100" preserveAspectRatio="true">
 	<defs>
 		<linearGradient id="gr-simple" x1="0" y1="0" x2="100%" y2="100%">
     	<stop stopColor="rgba(255,255,255,.2)" offset="10%"/>

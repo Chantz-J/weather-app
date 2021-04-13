@@ -18,7 +18,7 @@ const WeatherContainer = ({error, weather, isLoading}) => {
     return (
         <Main>
             {
-                  weather.daily && weather.daily.map(daily => {
+                   weather.daily && weather.daily.map(daily => {
                     return (
                          <WeatherDaily 
                           key={daily.dt} 
@@ -36,7 +36,6 @@ const maptoStateProps = state => {
     return {
         error: state.error,
         weather: state.weather,
-        isLoading: state.isLoading
     }
 }
 export default connect(maptoStateProps, {fetchWeather})(WeatherContainer)

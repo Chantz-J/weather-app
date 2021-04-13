@@ -15,6 +15,14 @@ const Day = styled.div`
    padding: 1rem;
    display: flex;
    flex-direction: column;
+
+   .weather-info {
+
+      .temp {
+        font-size: 2rem;
+      }
+
+   }
    
 `
 
@@ -48,7 +56,7 @@ export default function WeatherDaily({daily, isLoading}){
              <div className="weather-info">
                 {Icon}
                 <p>{daily.weather[0].description}</p>
-                <p>{Math.round((daily.temp.day - 273) * 9/5 + 32)} &deg;</p>
+                <p className="temp">{Math.round((daily.temp.day - 273) * 9/5 + 32)} &deg;</p>
              </div>
             }
         </Day>
