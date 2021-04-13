@@ -8,7 +8,7 @@ export const fetchWeather = () => {
     return (dispatch) => {
         dispatch({type: FETCH_WEATHER_START})
         axios
-        .get(`https://api.openweathermap.org/data/2.5/onecall?lat=27.9506&lon=-82.4572&exclude=minutely,hourly,current&appid=${process.env.REACT_APP_API_KEY}`)
+        .get(`https://api.openweathermap.org/data/2.5/onecall?lat=27.9506&lon=-82.4572&exclude=&appid=${process.env.REACT_APP_API_KEY}`)
         .then(res => {
             dispatch({type: FETCH_WEATHER_SUCCESS, payload: res.data})
         })

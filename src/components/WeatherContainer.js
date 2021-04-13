@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { connect } from 'react-redux'
-import { fetchWeather } from '../actions/index'
+
 
 import WeatherDaily from './sections/WeatherDaily'
 
@@ -38,4 +38,4 @@ const maptoStateProps = state => {
         weather: state.weather,
     }
 }
-export default connect(maptoStateProps, {fetchWeather})(WeatherContainer)
+export default connect(maptoStateProps, {})(WeatherContainer)
