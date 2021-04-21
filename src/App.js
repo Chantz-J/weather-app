@@ -7,9 +7,8 @@ import { fetchWeather } from './actions/index'
 import { GlobalStyle } from './styles/global'
 import { theme } from './styles/theme'
 
-
-import SearchBar from './components/Search'
 import WeatherContainer from './components/WeatherContainer'
+import Current from './components/Current'
 
 const App = ({fetchWeather, isLoading}) => {
   useEffect(() => {fetchWeather()},[fetchWeather])
@@ -17,7 +16,7 @@ const App = ({fetchWeather, isLoading}) => {
     <ThemeProvider theme={theme}>
       <div className="App">
         <GlobalStyle />
-        <SearchBar />
+        <Current  isLoading={isLoading} />
         <WeatherContainer isLoading={isLoading} />
       </div>
     </ThemeProvider>

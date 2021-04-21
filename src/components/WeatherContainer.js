@@ -11,7 +11,7 @@ const Main = styled.main`
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    margin: 0 2rem;
 `
 
 const WeatherContainer = ({error, weather, isLoading}) => {

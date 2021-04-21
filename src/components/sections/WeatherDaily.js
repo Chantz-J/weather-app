@@ -11,8 +11,8 @@ import Loader from '../../svg/Loader'
 
 const Day = styled.div`
    width: 100%;
-   margin: 1rem;
-   padding: 1rem;
+   margin: 1rem 1rem;
+   
    display: flex;
    flex-direction: column;
 
@@ -26,7 +26,7 @@ const Day = styled.div`
    
 `
 
-export default function WeatherDaily({daily, isLoading}){
+export default function WeatherDaily({daily, isLoading, error}){
 
     const iconRender = (main) => {
         switch(main) {
@@ -57,6 +57,7 @@ export default function WeatherDaily({daily, isLoading}){
                 {Icon}
                 <p>{daily.weather[0].description}</p>
                 <p className="temp">{Math.round((daily.temp.day - 273) * 9/5 + 32)} &deg;</p>
+                {error ? <p style={{color: 'red'}}>{error}</p> : null}
              </div>
             }
         </Day>

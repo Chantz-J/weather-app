@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 const SvgContainer = styled.div`
-max-width: 150px;
-   margin: 20px;
+max-width: 200px;
+margin: 0 auto;
    width: 100%;
 
    .big-path,

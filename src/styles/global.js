@@ -20,4 +20,13 @@ export const GlobalStyle = createGlobalStyle`
     "Helvetica Neue", "Segoe UI", Arial, sans-serif;
       
     }
+
+    .App {
+       height: 100vh;
+       background: ${props => props.theme.colors.primary};
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       
+    }
 `
